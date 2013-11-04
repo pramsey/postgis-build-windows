@@ -79,7 +79,9 @@ A central script for controlling the build and bundle process. Edit as follows:
 build_postgis_deps.sh
 ---------------------
 
-The script for building out each dependency. First the build tools.
+The script for building out each dependency. Each component is in a true/false block so you can turn it on/off as you work through the chain if you want.
+
+First the build tools.
 
 - ``autoconf``
 - ``automake``
