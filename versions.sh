@@ -1,13 +1,14 @@
 
-
-
-# From http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.8.2/threads-posix/sjlj/
+# Note that this tool chain: targets win32; includes gcc 4.8.2; uses sjlj 
+# exceptions. Downloaded from: 
+#http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.8.2/threads-posix/sjlj/
 BUILDCHAIN=/c/mingw32
 
-# From http://www.cmake.org/files/v2.8/cmake-2.8.12-win32-x86.zip
+# CMake from:
+# http://www.cmake.org/files/v2.8/cmake-2.8.12-win32-x86.zip
 CMAKE_PATH=/c/cmake
 
-# This is where we download source tarballs
+# This is where we download source tar balls
 SOURCES=/c/rebuilt/sources
 # This is where we unpack source and build it 
 BUILDS=/c/rebuilt/builds
@@ -38,14 +39,15 @@ V_PGSQL_MAJOR=9.3
 V_PGSQL_PATCH=1
 V_PGSQL=${V_PGSQL_MAJOR}.${V_PGSQL_PATCH}
 
-# These are the build output target paths
-# Each dependency gets its own separate install target
-# to make it easier to upgrade/rebuild them independently
+# These are the build output target paths.
+# Tools get stuff into the build chain.
 PREFIX_AUTOCONF=${BUILDCHAIN}
 PREFIX_AUTOAKE=${BUILDCHAIN}
 PREFIX_LIBTOOL=${BUILDCHAIN}
 PREFIX_CUNIT=${BUILDCHAIN}
 
+# Each dependency gets its own separate install target
+# to make it easier to upgrade/rebuild them independently.
 PREFIX_LIBICONV=${RELEASES}/libiconv-${V_LIBICONV}-${OS_BUILD}
 PREFIX_LIBXML=${RELEASES}/libxml2-${V_LIBXML}-${OS_BUILD}
 PREFIX_JSON=${RELEASES}/json-c-${V_JSON}-${OS_BUILD}
@@ -60,7 +62,7 @@ PREFIX_XSLT=${RELEASES}/xslt-w32
 # When finally testing, running we need all the DLLs on
 # one PATH, and this makes it easier to build that kind 
 # of big PATH. Also to test that we have all our 
-# dependencies in place before trying to build PostGIS itself
+# dependencies in place before trying to build PostGIS itself.
 PREFIXES=""
 PREFIXES+=" ${PREFIX_GDAL}"
 PREFIXES+=" ${PREFIX_GEOS}"

@@ -159,7 +159,7 @@ if false; then
 		
 fi
 
-if true; then
+if false; then
 	JSON_NAME=json-c-${V_JSON}
 	JSON_FILE=${JSON_NAME}.zip
 
@@ -189,7 +189,7 @@ fi
 # Regina builds GEOS with CMake, but CMake doesn't create a
 # usable geos-config, which introduces problems later. The 
 # autotools build works, so we stick with that for now.
-if true; then
+if false; then
 
 	GEOS_NAME=geos-${V_GEOS}
 	GEOS_FILE=${GEOS_NAME}.tar.bz2
@@ -208,7 +208,7 @@ if true; then
 	strip *.dll
 fi
 
-if true; then
+if false; then
 
 	PG_NAME=postgresql-${V_PGSQL}
 	PG_DIR=${BUILDS}/${PG_NAME}
@@ -247,7 +247,7 @@ if true; then
 
 fi
 
-if true; then
+if false; then
 
 	PROJ_NAME=proj-${V_PROJ}
 	PROJ_DATUM=proj-datumgrid-1.5.zip
@@ -269,7 +269,7 @@ if true; then
 	strip *.dll
 fi
 
-if true; then
+if false; then
 
 	GDAL_NAME=gdal-${V_GDAL}
 
