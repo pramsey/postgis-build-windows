@@ -27,14 +27,14 @@ MSYS
 MSYS provides the UNIX-style BASH shell and command-line utilities necessary for the build to succeed.
 
 - Download and run MinGW current installer from http://sourceforge.net/projects/mingw/files/
-  - Select and install **only** `msys-base`
+  * Select and install **only** `msys-base`
 - Open the MSYS BASH commandline
 - Add the base MinGW path to yours so you can access `mingw-get`
-  - `export PATH=$PATH:/c/mingw/bin`
+  * `export PATH=$PATH:/c/mingw/bin`
 - Install extra MSYS utilities that help with the build process
-  - `mingw-get install msys-wget`
-  - `mingw-get install msys-perl`
-  - `mingw-get install unzip`
+  * `mingw-get install msys-wget`
+  * `mingw-get install msys-perl`
+  * `mingw-get install unzip`
 
 
 MinGW64
