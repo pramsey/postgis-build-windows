@@ -27,14 +27,19 @@ MSYS
 MSYS provides the UNIX-style BASH shell and command-line utilities necessary for the build to succeed.
 
 - Download and run MinGW current installer from http://sourceforge.net/projects/mingw/files/
-  * Select and install **only** `msys-base`
-- Open the MSYS BASH commandline
+
+  - Select and install **only** `msys-base`
+  - Open the MSYS BASH commandline
+  
 - Add the base MinGW path to yours so you can access `mingw-get`
-  * `export PATH=$PATH:/c/mingw/bin`
+
+  - `export PATH=$PATH:/c/mingw/bin`
+
 - Install extra MSYS utilities that help with the build process
-  * `mingw-get install msys-wget`
-  * `mingw-get install msys-perl`
-  * `mingw-get install unzip`
+
+  - `mingw-get install msys-wget`
+  - `mingw-get install msys-perl`
+  - `mingw-get install unzip`
 
 
 MinGW64
@@ -49,9 +54,7 @@ It's possible in theory to get MinGW64 to cross-compile, but the builds tend to 
 MinGW64 allows you to choose what kind of exception handling system to use, generally "Dwarf" or "SJLJ" (aka "longjmp"). Go with the "SJLJ" as a general rule, since it is older and more likely to be supported by libraries you use. There is a small performance penalty, but only for code that throws a lot of exceptions, which the PostGIS stack does not.
 
 - The `MinGW Builds <http://sourceforge.net/projects/mingwbuilds>`_ project is the slickest build effort, bundling up the latest MinGW64 releases into an installer. Probably worth testing from time-to-time.
-
 - The `SeZero peronsonal builds <http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/sezero_4.5_20111101/>`_ are popular in web blogs about how to build, and used by Regina Obe in her current Windows build chain. I could not get a good build out of them.
-
 - **USE THIS ONE** The `latest mingw-builds raw build <http://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/4.8.2/threads-posix/sjlj/>`_ includes GCC 4.8.2 and did give a clean build.
 
 Unzip or unpack your build tool, and update the `BUILDCHAIN` variable to point to the root of the install directory.
@@ -64,9 +67,11 @@ A central script for controlling the build and bundle process. Edit as follows:
 
 - Set up the `BUILDCHAIN` as above
 - Set the storage directory locations
+
   - `SOURCES` where the tarballs are downloaded
   - `BUILDS` where sources are unpacked and built
   - `RELEASES` where binaries are installed
+  
 - The `V_*` variables control which version is downloaded and built. In general, these are all the latest versions.
 - Based on the `PREFIX_*` variables, each package is installed into a separate release directory, to allow multiple versions to coexist easily, and incremental upgrades/changes to be applied
 
