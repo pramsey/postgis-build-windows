@@ -21,7 +21,7 @@ PATH=/bin:/sbin:/include:/c/Windows/system32
 for PREFIX in $PREFIXES $BUILDCHAIN
 do
   if [ ! -d ${PREFIX} ]; then
-    echo "Missing expected dependency $PREFIX"
+	echo "Missing expected dependency $PREFIX"
 	exit 1
   fi
   PATH=$PREFIX/bin:$PREFIX/lib:$PATH
@@ -48,7 +48,7 @@ LDFLAGS="-L${PREFIX_PGSQL}/lib" \
   --with-gui \
   --with-gettext=no
 	  
-	#    --with-xsldir=${PROJECTS}/docbook/docbook-xsl-1.76.1 
+#  --with-xsldir=${PROJECTS}/docbook/docbook-xsl-1.76.1 
 
 ########################################################################
 # BUILD
