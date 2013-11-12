@@ -288,7 +288,7 @@ if false; then
 	--enable-shared \
 	--with-geos=no \
 	--with-pg=${PREFIX_PGSQL}/bin/pg_config \
-    --with-libz=internal \
+	--with-libz=internal \
 	--with-libiconv-prefix=${PREFIX_LIBICONV} \
 	--with-xml2=${PREFIX_LIBXML}/bin/xml2-config \
 	--prefix=${PREFIX_GDAL}
